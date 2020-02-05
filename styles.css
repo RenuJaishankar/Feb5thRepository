@@ -1,0 +1,81 @@
+:root{
+    --primary:blue;
+    --secondary:red;
+}
+header,main{
+    color:var(--primary);
+}
+/*main{
+    color:var(--primary)
+}*/
+/*nested */
+header{
+    /*margin-top:10px;
+    margin-right:10px;
+    margin-left:10px;
+    margin-bottom:10px;*/
+    margin:10 px 10px 10px 10px;/*top right left bottom */
+   /* border-width:1px;
+    border-color:red;
+    border-style:dotted;*/
+    border:1px red dotted;
+    /*2 defines the line height in 16px/2 */
+    font:italic small-caps bold 16px/2 cursive;
+    float:left;
+    /*position:absolute;
+    position:static;*/
+    position:relative;
+    top:40px;
+    left:40px;
+}
+/*nested element */
+footer #myId{
+   color:var(--secondary);
+}
+/* note the pseudo class,this is defining how we want an element to render depending on state*/
+a:visited{
+    color:grey;
+
+}
+/*same with this class */
+/*pseudoclass defines the state */
+a:hover{
+    color:hotpink;
+}
+/*this is a pseudo-element*/
+/*myclass is a pseudo class and first-line is the pseudo element*/
+/*adding ! important is considered by some to be code smell */
+.myClass::first-line{
+    color:hotpink;
+}
+/* another psuedo-element, this one is being affected by the one defined before it because it renders on the first line */
+.myClass::before{
+    content:"This renders before my class";
+}
+
+.square{
+height:14em;
+width:14em;
+background-color:var(--secondary);
+position: relative;
+top:10em;
+margin:auto;
+border-radius:10px;
+/*animation:4s mysquare;*/
+}
+
+@keyframes mysquare{
+   /* from {top:10em;}
+    to {top:20em;}*/
+    0% {top:10em; box-shadow: 0 0 0 rgba(0,0,0,0);}
+    100% {top:9.5em; box-shadow: 0 10px 10px rgba(0,0,0,0.3);}
+    
+    /* reference code from Lionel */
+    /* 0% {top:10em; box-shadow: 0 0 0 rgba(0,0,0,0);}
+    100% {top:9.5em; box-shadow: 0 10px 10px rgba(0,0,0,0.3);} */
+}
+
+.square:hover{
+   box-shadow: 0 10px 10px rgba(0,0,0,0);
+   animation: 0.2s mysquare forwards;
+}
